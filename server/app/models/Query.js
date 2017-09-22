@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
- var message = new Schema({
+var message = new Schema({
 
   sender:{type:String,required:true},
   text:{type:String,required:true},

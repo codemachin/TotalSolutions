@@ -14,6 +14,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json({limit:'10mb',extended:true}));
 app.use(bodyParser.urlencoded({limit:'10mb',extended:true}));
 
+
 // initialising the passportjs middlewares . It contains the google and facebook strategy configurations
 
 require('./server/middlewares/passport').passportMiddleware(passport,app);
