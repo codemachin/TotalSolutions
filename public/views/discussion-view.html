@@ -1,0 +1,86 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <img class="navbar-brand" src="../img/teamwork.png" alt="logo">
+  <a class="navbar-brand" href="#/home" style="font-family: 'Lobster', cursive">Total Solutions</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">    
+
+    <ul class="navbar-nav my-2 my-lg-0">
+
+      <li class="nav-item active">
+        <a class="nav-link" style="color: #00e5ff">Hi,&nbsp;<span class="capitalize">{{myDiscussion.profile.data.firstName}}</span></a>
+      </li>
+
+      <li ng-hide="myDiscussion.profile.data.firstName=='admin'" class="nav-item active">
+        <a class="nav-link" href="/#/queryCreate">Create new Query </a>
+      </li>
+      
+      <li class="nav-item active">
+        <a class="nav-link" ng-click="myDiscussion.logout()" style="cursor: pointer"><span></span>Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- end navigation bar -->
+
+<div class="bgCustom" style="min-height: 100vh;padding-bottom: 100px">
+  <div class="container" style="padding-top: 80px">
+    <div class="card" style="padding: 2%;">
+      <div class="card-text small">
+      <h6>Ticket no : {{myDiscussion.items.ticketNo}}</h6>
+      <h6 id="extra">Created on : {{myDiscussion.items.created | date : 'medium'}} by {{myDiscussion.items.email}}</h6>
+    </div>
+      <div class="alert alert-info" role="alert">
+        <h3 class="capitalize" style="color:#004d40;margin-left:10px;">{{myDiscussion.items.title}}</h3>
+        <hr id="hrdiv">
+        <div style="margin-left: 10px">
+          <h6 ng-bind-html="myDiscussion.details"></h6>
+        </div>
+      </div>
+      <a ng-if="myDiscussion.items.fileName" href="./download/{{myDiscussion.items.fileName}}" style="margin-bottom: 5px">Download attached file</a>
+      <!-- start of chatbox -->
+      <div class="card chatbox" schroll-bottom="myDiscussion.items.messages">
+        <div style="padding-right: 4%;">
+            <ul id="messages" style="list-style-type: none;">
+              <li ng-repeat="message in myDiscussion.items.messages">
+              <div class="speech-bubble1" ng-show="message.sender!=myDiscussion.profile.data.firstName">
+                {{message.text}}<br>
+                <div class="created">{{message.created | date: 'short'}}<br><span id="sender">by {{message.sender}}</span></div>
+              </div>
+              <div class="speech-bubble" ng-hide="message.sender!=myDiscussion.profile.data.firstName">
+                {{message.text}}<br>
+                <div class="created">{{message.created | date: 'short'}}</div>
+              </div>
+              </li>
+            </ul>
+        </div>      
+      </div>
+      <div style="width: 100%">
+          <!-- input text box and close button -->
+          <form ng-submit="myDiscussion.sendMessage()">
+            <input type="text" ng-disabled="myDiscussion.items.status=='closed'" ng-model="myDiscussion.text" placeholder="Send Message" required="" class="form-control" />
+          </form><br>
+          <button ng-if="myDiscussion.items.status=='open'" ng-click="myDiscussion.close(myDiscussion.items._id)" class="btn btn-danger" style="float: right">Close Query</button>
+          <button ng-if="myDiscussion.items.status=='closed'" ng-click="myDiscussion.opend(myDiscussion.items._id)" class="btn btn-success" style="float: right">Reopen Query</button>
+      
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<footer class="footmar">
+  <div>
+  <br>
+    Created and Designed by:
+    <br>
+    Vivek Shankar<br>
+    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=viveksome@gmail.com" style="color: white;"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;viveksome@gmail.com</a><br>
+    <a href=""><i class="fa fa-facebook-square" aria-hidden="true" style="color: #3B5998"></i></a>
+    <a href=""><i class="fa fa-google-plus" aria-hidden="true" style="color: #D62221"></i></a>
+    <a href=""><i class="fa fa-twitter-square" aria-hidden="true" style="color: #1DA1F2"></i></a>
+
+  </div>
+</footer>

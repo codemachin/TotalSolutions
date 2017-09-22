@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img class="navbar-brand" src="../img/teamwork.png" alt="logo">
+  <a class="navbar-brand" href="#/home" style="font-family: 'Lobster', cursive">Total Solutions</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    
+
+    <ul class="navbar-nav my-2 my-lg-0">
+
+      <li class="nav-item active">
+        <a class="nav-link" style="color: #00e5ff">Hi,&nbsp;<span class="capitalize">{{myQueryCreate.profile.data.firstName}}</span></a>
+      </li>
+      
+      <li class="nav-item active">
+        <a class="nav-link" ng-click="myQueryCreate.logout()" style="cursor: pointer"><span></span>Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- end of navigation bar -->
+
+<div class="bgCustom" style="min-height: 94.5vh;padding-bottom: 100px">
+  <div class="container" style="padding-top: 40px">
+    <!-- start of query create card -->
+    <div class="card" style="padding: 2%">
+      <div ng-if="myQueryCreate.ticket" class="alert alert-success" role="alert">
+        Your Query with ticket number {{myQueryCreate.ticket}} has been opened successfully.<br><br>
+        <a href="#/home" class="btn btn-primary" style="color:white">View All Open Queries</a>
+      </div>
+
+      <div class="alert alert-primary" role="alert">
+        Submit query by filling form below
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Query Title</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model="myQueryCreate.title" placeholder="Title of your query">
+      </div>
+      <!--start of file upload division-->
+      <form name="myQueryCreate.upload_form">
+        Upload relevant file (optional)&nbsp;
+              <input 
+                  type="file" 
+                  ngf-select 
+                  ng-model="myQueryCreate.file" 
+                  name="file" 
+                  ngf-pattern="'*'"
+                  accept="*" 
+                  ngf-max-size="20MB" 
+                  />
+              <i ng-show="myQueryCreate.upload_form.file.$error.maxSize">File too large : max allowed is 20MB</i>
+              <p>{{myQueryCreate.progress}}</p>
+      </form>
+      <!-- end of file upload division -->
+      <div class="form-group">
+        <label for="desc">Description</label>
+        <!--trix editor used as text area for better text formatting-->
+        <trix-editor angular-trix ng-model="myQueryCreate.details" class="trix-content" placeholder="Describe your query"></trix-editor>
+      </div>
+
+      <button ng-click="myQueryCreate.run()" class="btn btn-success" style="width: 130px;cursor: pointer;">Create now!</button>
+
+    </div>
+
+  </div>
+</div>
+
+<footer class="footmar">
+  <div>
+  <br>
+    Created and Designed by:
+    <br>
+    Vivek Shankar<br>
+    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=viveksome@gmail.com" style="color: white;"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;viveksome@gmail.com</a><br>
+    <a href=""><i class="fa fa-facebook-square" aria-hidden="true" style="color: #3B5998"></i></a>
+    <a href=""><i class="fa fa-google-plus" aria-hidden="true" style="color: #D62221"></i></a>
+    <a href=""><i class="fa fa-twitter-square" aria-hidden="true" style="color: #1DA1F2"></i></a>
+
+  </div>
+</footer>

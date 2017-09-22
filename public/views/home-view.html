@@ -1,0 +1,105 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <img class="navbar-brand" src="../img/teamwork.png" alt="logo">
+  <a class="navbar-brand" href="#/home" style="font-family: 'Lobster', cursive">Total Solutions</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    
+
+    <ul class="navbar-nav my-2 my-lg-0">
+
+      <li class="nav-item active">
+        <a class="nav-link" style="color: #00e5ff">Hi,&nbsp;<span class="capitalize">{{myDash.profile.data.firstName}}</span></a>
+      </li>
+
+      <li ng-hide="myDash.profile.data.firstName=='admin'" class="nav-item active">
+        <a class="nav-link" href="/#/queryCreate">Create new Query </a>
+      </li>
+      
+      <li class="nav-item active">
+        <a class="nav-link" ng-click="myDash.logout()" style="cursor: pointer;"><span></span>Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- end navigation bar -->
+
+<div class="bgCustom" style="min-height: 100vh;padding-bottom: 100px">
+  <div class="container" style="padding-top: 80px">
+
+      <div ng-show="myDash.items[0].title" class="form-group">
+        <br>
+        <!-- input box and buttons -->
+        <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model="search" placeholder="Search Queries">
+      </div>
+      <div class="card" ng-if="myDash.profile.data.firstName!='admin'" ng-show="myDash.items.length<1 && myDash.expire!=false" style="padding: 2%;align-items: center;color: #004d40">
+        <h1>You have not created any query till now</h1><br>
+        <a href = "/#/queryCreate" class="btn btn-success" style="width: 120px;color :white">Create Now!</a>
+      </div>
+      <div class="card" ng-if="myDash.profile.data.firstName=='admin'" ng-show="myDash.items.length<1 && myDash.expire!=false" style="padding: 2%;align-items: center;color: #004d40">
+        <h1>Dear Admin, no queries have been raised till now.</h1><br>
+      </div>
+      <div ng-if="myDash.items[0].title" style="padding-top: 20px;margin-bottom: 50px;display: block;font-size: 1em;">
+        <div class="row">
+          <div class="col-6 col-sm-4 col-lg-3">
+            <button type="button" ng-click="myDash.all()" class="btn btn-light btn-block">All Queries</button>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3">
+            <button type="button" ng-click="myDash.open()" class="btn btn-light btn-block">Open Queries</button>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3">
+            <button type="button" ng-click="myDash.closed()" id="od1" class="btn btn-light btn-block">Closed Queries</button>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3">
+            <button type="button" ng-click="myDash.sort()" id="od" class="btn btn-light btn-block"><i class="fa fa-sort" aria-hidden="true"></i>&nbsp;Order by Date</button>
+          </div>
+        </div>
+      </div>
+      <!-- start of all queries view -->
+      <div ng-repeat="item in myDash.items | filter:search">
+        <div class="card" ng-if = "item.status == myDash.worker || item.status == myDash.worker1" style="margin-bottom: 20px;">
+            <div class="card-header">
+              <h6 class="card-title">
+                  Query Title ~&nbsp;{{item.title}}
+                </h6>
+            </div>
+                  
+            <div class="card-body">
+              
+              <div class="card-text small">
+                <div class="container">
+                  Ticket no ~&nbsp;<b>{{item.ticketNo}}</b><br>
+                  Posted by ~&nbsp;{{item.email}}<br>
+                  Status ~&nbsp;<b><span ng-if="item.status=='open'" style="color: green">{{item.status}}</span><span ng-if="item.status=='closed'" style="color: red">{{item.status}}</span></b><br>
+                  Created on ~&nbsp;{{item.created | date : "medium"}}<br>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">
+              <a href="/#/{{item._id}}/discussion" ><h6>View Query!!!</h6></a>
+              <a href="" ng-click="myDash.delete(item._id,$index)" style="color: red;float: right"><h6>Delete Query</h6></a>
+              <a href="" ng-if="item.status=='open'" ng-click="myDash.close(item._id,$index)" style="color:green;float: right;margin-right: 2%"><h6>Close Query</h6></a>
+              <a href="" ng-if="item.status=='closed'" ng-click="myDash.opend(item._id,$index)" style="color:green;float: right;margin-right: 2%"><h6>Reopen Query</h6></a>
+
+            </div>
+
+        </div>
+      </div>
+  </div>
+</div>
+
+<footer class="footmar">
+  <div>
+  <br>
+    Created and Designed by:
+    <br>
+    Vivek Shankar<br>
+    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=viveksome@gmail.com" style="color: white;"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;viveksome@gmail.com</a><br>
+    <a href=""><i class="fa fa-facebook-square" aria-hidden="true" style="color: #3B5998"></i></a>
+    <a href=""><i class="fa fa-google-plus" aria-hidden="true" style="color: #D62221"></i></a>
+    <a href=""><i class="fa fa-twitter-square" aria-hidden="true" style="color: #1DA1F2"></i></a>
+
+  </div>
+</footer>

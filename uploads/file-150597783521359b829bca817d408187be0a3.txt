@@ -1,0 +1,5 @@
+Github pages link to the angular game of thrones website: https://codemachin.github.io/gameofthrones/
+My github repository: https://github.com/codemachin/gameofthrones/
+
+ps: The current website is hosted from branch : gh-pages.
+    code is uploaded to both the branches.
