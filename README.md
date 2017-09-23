@@ -10,41 +10,51 @@ Robust MEAN Ticket based support system
 
 [54.209.102.122](http://54.209.102.122/ "Ticket based support app")
 
-## Note
+## Assumption
 ```
-		All users having first name as admin will be the admin of this application.
+	All users having first name as 'admin' will be the admin of this application.
+```
+
+Project Description
+```
+	Support is an essential feature for any platform, and dedicated support is best approach in case you are 
+	really concerned about the user experience of your platform.   The Aim of the project is to create an online 
+	ticket based support system, just like the one present on edwisor.com which should be usable by any kind of 
+    platform to get support queries from their users and resolve them.
 ```
 
 ## Features
 
-		1) Login(encrypted)
-		2) Signup(encrypted)
-		3) Ticket Raising panel - User facing 
-			~ A View to create a ticket.
-			~ File upload upto 20 MB.
-			~ A View to view all queries raised by the person. This view contains necessary shortcuts like open and close query with sort and filter functionality.
-			~ A view to show the details of a particular query.
-			~ This view contains file download feature and one can download the files attached by the user.
-			~ Nice and beautiful chat like UI.
-			~ This view has the option to set the status of the ticket to ‘open’ or ‘closed’ depending on whether the query is resolved or not. 
-		4) Ticket Resolution panel - Admin
-			~ View to Display ticket by status. This view lists all tickets received by the support system. There are buttons to filter through the status of ticket. Ticket can be of status ‘open’ or ‘closed’ depending on whether the query is resolved or not.
-			~ A view to show the details of a particular query.
-			~ This view contains file download feature and one can download the files attached by the user.
-			~ Nice and beautiful chat like UI.
-			~ This view has the option to set the status of the ticket to ‘open’ or ‘closed’ depending on whether the query is resolved or not.
-		5) Additional Features
-			~ On Status change of ticket, the person should receive an email notification.
-			~ When the person receives the answer or the admin receives the reply, an email notification should be sent to the person concerned.
-			~ For the sake of simplicity, treat the Admin as a user of the system. Don’t create special backend for admin.
+	1) Login(encrypted)
+	2) Signup(encrypted)
+	3) Ticket Raising panel - User facing 
+		~ A View to create a ticket.
+		~ File upload upto 20 MB.
+		~ A View to view all queries raised by the person. This view contains necessary shortcuts like open and close query with sort and filter functionality.
+		~ A view to show the details of a particular query.
+		~ This view contains file download feature and one can download the files attached by the user.
+		~ Nice and beautiful chat like UI.
+		~ This view has the option to set the status of the ticket to ‘open’ or ‘closed’ depending on whether the query is resolved or not. 
+	4) Ticket Resolution panel - Admin facing
+		~ View to Display ticket by status. This view lists all tickets received by the support system. There are buttons to filter through the status of ticket. Ticket can be of status ‘open’ or ‘closed’ depending on whether the query is resolved or not.
+		~ A view to show the details of a particular query.
+		~ This view contains file download feature and one can download the files attached by the user.
+		~ Nice and beautiful chat like UI.
+		~ This view has the option to set the status of the ticket to ‘open’ or ‘closed’ depending on whether the query is resolved or not.
+	5) Additional Features
+		~ On Status change of ticket, the person should receive an email notification.
+		~ When the person receives the answer or the admin receives the reply, an email notification should be sent to the person concerned.
+		~ For the sake of simplicity, treated the Admin as a user of the system. No special backend for admin.
+	6) Security
+		~ Secured with JWT.
 
 ## Extra features
 
-		1) File Upload functionality.
-		2) File Download functionality.
-		3) Google signup and google login.
-		4) Facebook signup and facebook login.
-		5) Secure password reset feature with token expiry functionality.	
+	1) File Upload functionality.
+	2) File Download functionality.
+	3) Google signup and google login.
+	4) Facebook signup and facebook login.
+	5) Secure password reset feature with token expiry functionality.	
 
 ## Getting Started
 
@@ -52,10 +62,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-		1) Nodejs
-		2) Mongodb
-		3) NPM
-		4) Git
+	1) Nodejs
+	2) Mongodb
+	3) NPM
+	4) Git
 
 ### Installing
 
@@ -98,6 +108,7 @@ Getting started
 		6) Users can download his uploaded file at the time of query creation.
 		7) User will be able to reply to messages and send message himself in a chat like beautiful interface.
 		8) User can reset password securely if he forgets it.
+
 	Admin facing :
 		1) Admin must signup with first name as admin (all small characters).
 		2) All users having first name as admin will be the admin of this application.
