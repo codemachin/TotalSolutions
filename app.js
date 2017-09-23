@@ -14,13 +14,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json({limit:'10mb',extended:true}));
 app.use(bodyParser.urlencoded({limit:'10mb',extended:true}));
 
-///////////////////////////////////// middleware to allow cross origin requests /////////////////////////////////
-app.use(function(req, res, next) { 
-    res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
-    res.header("Access-Control-Allow-Origin", "http://totalsolutions.ga");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
 
 // initialising the passportjs middlewares . It contains the google and facebook strategy configurations
 
