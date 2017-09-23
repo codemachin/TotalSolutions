@@ -6,6 +6,7 @@ var shortid = require("shortid");
 var userModel = mongoose.model('User');
 var responseGenerator = require('./../../libs/responseGenerator');
 var crypto = require('./../../libs/crypto');
+var resetRouter  = express.Router();
 var async = require("async");
 var crypto1 = require('crypto');
 var mailer = require("./../../libs/mailConfig");
@@ -16,7 +17,7 @@ module.exports.controllerFunction = function(app) {
 
     //////////////////////////// route to set token and expity date usen user requests password change ////////////////////////
 
-    app.post('/forgot', function(req, res, next) {
+    resetRouter.post('/forgot', function(req, res, next) {
       
       async.waterfall([
         function(done) {
@@ -52,7 +53,7 @@ module.exports.controllerFunction = function(app) {
             text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
               'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
               /*'http://' + req.headers.host + '/reset/' + token + '\n\n' +*/
-              'http://totalsolutions.ga/reset/' + token + '\n\n' +
+              'http://totalsolutions.ga/api/v1/reset/' + token + '\n\n' +
               'If you did not request this, please ignore this email and your password will remain unchanged.\n'
           };
           mailer.smtpTransport.sendMail(mailOptions, function(err) {
@@ -69,7 +70,7 @@ module.exports.controllerFunction = function(app) {
 
     ////////////////////////////////////////////// route to check if token is valid ///////////////////////////////////////////
 
-    app.get('/reset/:token', function(req, res) {
+    resetRouter.get('/reset/:token', function(req, res) {
       userModel.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
         if (!user) {
           /*req.flash('error', 'Password reset token is invalid or has expired.');*/
@@ -81,7 +82,7 @@ module.exports.controllerFunction = function(app) {
 
     ///////////////////// route to change password, if token is valid and not expired and send success mail /////////////////////
 
-    app.post('/reset/:token', function(req, res) {
+    resetRouter.post('/reset/:token', function(req, res) {
       async.waterfall([
         function(done) {
           userModel.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
@@ -122,6 +123,8 @@ module.exports.controllerFunction = function(app) {
         res.redirect('/');
       });
     });
+
+    app.use('/api/v1', resetRouter);
     
 }
 

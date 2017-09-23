@@ -1,0 +1,45 @@
+Urls of my api - 
+
+base url(for localhost) - https://localhost:3000/api/v1
+base url(for live server) - https://totalsolutions.ga/api/v1
+
+Resources - 
+
+1) GET /ticket/all                 - gets all queries specific to loggged in user
+
+2) GET /ticket/admin/all           - get queries from all users for admin
+
+3) GET /ticket/:id                 - get single query details
+
+4) POST /ticket/add/message        - sends message to admin.
+							         Required fields - text,id,email,ticketNo
+
+5) POST /ticket/admin/add/message  - sends message to user that created the query
+									 Required fields - text,id,email,ticketNo
+	
+6) POST /ticket/:id/delete         - api for deleting a ticket
+
+7) POST /ticket/:id/close'         - api for closing a ticket
+
+8) POST /ticket/:id/open           - api for reopening a closed ticket
+
+9) POST /ticket/create             - api for submitting a new query
+						             Required fields - title,details,filename
+
+10) POST /users/login              - api to log user in
+						             Required fields - email,password
+
+11) GET /getProfile                - api to log in to google or facebook account whichever requested
+
+12) GET /logout                    - api to log in to google or facebook account whichever requested
+
+13) POST /forgot                   - api to request new password
+				                     Required fields - email
+
+14) POST /reset/                   - api to update new password on valid token
+
+15) POST /users/signup             - api to signup new user with all necessary details
+						             Required fields - firstName, lastName, email, mobile, password
+
+16) POST /ticket/upload            - webAPI exposed to upload file
+						             Required fields - file

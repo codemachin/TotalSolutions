@@ -64,7 +64,7 @@ myApp.controller('queryCreateController',['$window','$http','$routeParams','supp
     this.upload = function (file) {
 
         Upload.upload({
-            url: './ticket/upload', //webAPI exposed to upload the file
+            url: './api/v1/ticket/upload', //webAPI exposed to upload the file
             data:{
                 file:file
               } //pass file as data, should be user ng-model

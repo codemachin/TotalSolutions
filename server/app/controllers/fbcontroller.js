@@ -4,6 +4,7 @@ var userModel = mongoose.model('User');
 var responseGenerator = require('./../../libs/responseGenerator');
 var jwt = require('jsonwebtoken'); 
 var expressJwt = require('express-jwt');
+var socialRouter  = express.Router();
 
 
 var secret = require("./../../libs/jwtSecret").secret;
@@ -67,7 +68,7 @@ module.exports.passportControllerFunction = function(app,passport) {
 
     ////////////////////////////////////// route to check if user is set or not ///////////////////////////////////
 
-    app.get('/getProfile',
+    socialRouter.get('/getProfile',
       function(req, res){
         if(req.session.user){
           
@@ -86,10 +87,12 @@ module.exports.passportControllerFunction = function(app,passport) {
 
     /////////////////////////////////////////////// route to log user out ///////////////////////////////////////////
     
-    app.get('/logout',function(req, res){
+    socialRouter.get('/logout',function(req, res){
         req.logout();
         res.status(200).send('passport logged out')
     });
+
+    app.use('/api/v1', socialRouter);
 
 
 }

@@ -453,6 +453,6 @@ module.exports.controllerFunction = function(app) {
 
     //setting ticketRouter route
 
-    app.use('/ticket', ticketRouter);
+    app.use('/api/v1/ticket', ticketRouter);
  
 } //end contoller code
