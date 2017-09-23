@@ -50,7 +50,7 @@ module.exports.controllerFunction = function(app) {
                    delete newUser.password;
                    var myResponse = responseGenerator.generate(false,"successfully signup user",200,newUser);
                    
-                   var token = jwt.sign(myResponse, secret, { expiresIn : 60*5 });
+                   var token = jwt.sign(myResponse, secret, { expiresIn : 60*30 });
 
                    res.json({ token: token });
                   
@@ -86,7 +86,7 @@ module.exports.controllerFunction = function(app) {
                   var myResponse = responseGenerator.generate(false,"success",200,foundUser);
 
                   // We are sending the profile inside the token
-                  var token = jwt.sign(myResponse, secret, { expiresIn : 60*5 });
+                  var token = jwt.sign(myResponse, secret, { expiresIn : 60*30 });
 
                   res.json({ token: token });
 

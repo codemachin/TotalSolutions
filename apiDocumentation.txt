@@ -31,15 +31,13 @@ Resources -
 
 11) GET /getProfile                - api to log in to google or facebook account whichever requested
 
-12) GET /logout                    - api to log in to google or facebook account whichever requested
-
-13) POST /forgot                   - api to request new password
+12) POST /forgot                   - api to request new password
 				                     Required fields - email
 
-14) POST /reset/                   - api to update new password on valid token
+13) POST /reset/                   - api to update new password on valid token
 
-15) POST /users/signup             - api to signup new user with all necessary details
+14) POST /users/signup             - api to signup new user with all necessary details
 						             Required fields - firstName, lastName, email, mobile, password
 
-16) POST /ticket/upload            - webAPI exposed to upload file
+15) POST /ticket/upload            - webAPI exposed to upload file
 						             Required fields - file

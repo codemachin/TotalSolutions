@@ -15,7 +15,7 @@ Robust MEAN Ticket based support system
 	All users having first name as 'admin' will be the admin of this application.
 ```
 
-Project Description
+## Project Description
 ```
 	Support is an essential feature for any platform, and dedicated support is best approach in case you are 
 	really concerned about the user experience of your platform.   The Aim of the project is to create an 
@@ -47,6 +47,7 @@ Project Description
 		~ For the sake of simplicity, treated the Admin as a user of the system. No special backend for admin.
 	6) Security
 		~ Secured with JWT.
+		~ Default JWT expiry time is set to 30 minutes.
 
 ## Extra features
 

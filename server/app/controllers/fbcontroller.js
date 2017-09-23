@@ -77,7 +77,7 @@ module.exports.passportControllerFunction = function(app,passport) {
           req.session.user=null;
           req.logout();
           var myResponse = responseGenerator.generate(false,"successfully logged in user",200,user);
-          var token = jwt.sign(myResponse, secret, { expiresIn : 60*5 });
+          var token = jwt.sign(myResponse, secret, { expiresIn : 60*30 });
           res.json({ token: token });     
 
         }else{
