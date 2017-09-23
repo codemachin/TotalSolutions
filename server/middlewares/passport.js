@@ -14,7 +14,7 @@ exports.passportMiddleware = function(passport,app) {
     passport.use(new GoogleStrategy({
         clientID:     GOOGLE_CLIENT_ID,
         clientSecret: GOOGLE_CLIENT_SECRET,
-        callbackURL: "http://totalsolutions.ga/auth/google/callback",
+        callbackURL: "http://localhost:3000/auth/google/callback",
         passReqToCallback   : true
       },
       function(request, accessToken, refreshToken, profile, done) {                 
@@ -28,7 +28,10 @@ exports.passportMiddleware = function(passport,app) {
     passport.use(new Strategy({
         clientID: '466781710345000',
         clientSecret: 'be05f400aa68396530acd6abee8bbd37',
-        callbackURL: 'http://totalsolutions.ga/login/facebook/return',
+        ////////// localhost ////////////////
+        /*clientID: '359580641139615',
+        clientSecret: '42bb227a973945d92e5ea283acdf3bab',*/
+        callbackURL: 'http://localhost:3000/login/facebook/return',
         enableProof: true,
         profileFields: ['id', 'emails', 'name']
       },
