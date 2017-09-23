@@ -70,10 +70,6 @@ myApp.service('supportService', function($http){
 		return $http.get(baseUrl+'/getProfile')
 	} // api to log in to google or facebook account whichever requested
 
-	this.passportLogout = function (){
-		return $http.get(baseUrl+'/logout')
-	} // api to logout from facebook or google whichever used to sign in
-
 	this.forgot = function(id){
 
 		return $http.post(baseUrl+'/forgot',id)

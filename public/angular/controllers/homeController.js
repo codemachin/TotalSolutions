@@ -180,31 +180,11 @@ myApp.controller('homeController',['$window','$http','$routeParams','supportServ
     }// function to open a closed ticket
 
 
-    this.passportLogout = function(){
-
-      supportService.passportLogout()
-      .then(function successCallback(response) {
-            
-            if(response.status==200){
-             console.log("logged out")
-            }
-            
-          }, function errorCallback(response) {
-              
-              alert("some error occurred. Check the console.");
-              console.log(response);
-
-          });
-
-
-    }// function to logout of passportLogin for both google and facebook
-
-
     this.logout = function () {
       
       delete $window.sessionStorage.token;
       window.location="#/"
-      main.passportLogout();
+      
     };// deletes the token on user logout
 
 

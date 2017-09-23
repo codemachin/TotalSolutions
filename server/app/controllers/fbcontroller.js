@@ -75,6 +75,7 @@ module.exports.passportControllerFunction = function(app,passport) {
           var user = req.session.user;
           delete user.password;  
           req.session.user=null;
+          req.logout();
           var myResponse = responseGenerator.generate(false,"successfully logged in user",200,user);
           var token = jwt.sign(myResponse, secret, { expiresIn : 60*5 });
           res.json({ token: token });     
@@ -85,12 +86,6 @@ module.exports.passportControllerFunction = function(app,passport) {
         }
     });
 
-    /////////////////////////////////////////////// route to log user out ///////////////////////////////////////////
-    
-    socialRouter.get('/logout',function(req, res){
-        req.logout();
-        res.status(200).send('passport logged out')
-    });
 
     app.use('/api/v1', socialRouter);
 
