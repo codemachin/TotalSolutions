@@ -27,6 +27,7 @@ app.use('/',express.static(__dirname + '/public'));
 var dbPath  = "mongodb://localhost/mySupport";
 
 // command to connect with database
+
 db = mongoose.connect(dbPath);
 
 mongoose.connection.once('open', function() {

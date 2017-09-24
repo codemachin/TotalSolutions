@@ -12,7 +12,7 @@ Robust MEAN Ticket based support system
 
 ## Assumption
 ```
-	All users having first name as 'admin' will be the admin of this application.
+	All users having first name as '**admin**' will be the admin of this application.
 ```
 
 ## Project Description
@@ -55,7 +55,8 @@ Robust MEAN Ticket based support system
 	2) File Download functionality.
 	3) Google signup and google login.
 	4) Facebook signup and facebook login.
-	5) Secure password reset feature with token expiry functionality.	
+	5) Added angular-trix editor for better text formatting.
+	6) Secure password reset feature with token expiry functionality.	
 
 ## Getting Started
 
