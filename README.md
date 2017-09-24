@@ -17,10 +17,10 @@ All users having first name as '**admin**' will be the admin of this application
 
 ## Project Description
 ```
-	Support is an essential feature for any platform, and dedicated support is best approach in case you are 
-	really concerned about the user experience of your platform.   The Aim of the project is to create an 
-	online ticket based support system, just like the one present on edwisor.com which should be usable by any 
-	kind of platform to get support queries from their users and resolve them.
+Support is an essential feature for any platform, and dedicated support is best approach in case you are 
+really concerned about the user experience of your platform.   The Aim of the project is to create an 
+online ticket based support system, just like the one present on edwisor.com which should be usable by 
+any kind of platform to get support queries from their users and resolve them.
 ```
 
 ## Features
@@ -93,33 +93,33 @@ Setting up the local server
 Getting started
 
 ```
-	1) Visit http://localhost:3000 on your browser
-	2) Select signup to create a new account
-	3) Enhance you customer support functionality with beautiful and user friendly online ticket based support system.
+1) Visit http://localhost:3000 on your browser
+2) Select signup to create a new account
+3) Enhance you customer support functionality with beautiful and user friendly online ticket based support system.
 ```
 
 ## How to use
 
 ```
-	User facing :
-		1) Use a unique email to start with
-		2) After logging in, user will be able to view all the tickets he has created.
-		3) User can filter tickets based on which are open or closed.
-		4) While creating a ticket an user can upload any file upto 20 MB that best describes his query. 
-		5) Clicking on a particular ticket will open the query view where user can see all the original question and answer.
-		6) Users can download his uploaded file at the time of query creation.
-		7) User will be able to reply to messages and send message himself in a chat like beautiful interface.
-		8) User can reset password securely if he forgets it.
+User facing :
+	1) Use a unique email to start with
+	2) After logging in, user will be able to view all the tickets he has created.
+	3) User can filter tickets based on which are open or closed.
+	4) While creating a ticket an user can upload any file upto 20 MB that best describes his query. 
+	5) Clicking on a particular ticket will open the query view where user can see all the original question and answer.
+	6) Users can download his uploaded file at the time of query creation.
+	7) User will be able to reply to messages and send message himself in a chat like beautiful interface.
+	8) User can reset password securely if he forgets it.
 
-	Admin facing :
-		1) Admin must signup with first name as admin (all small characters).
-		2) All users having first name as admin will be the admin of this application.
-		3) After logging in, admin will be able to view all the tickets that has been created on the support system.
-		4) Admin can filter tickets based on which are open or closed. 
-		5) Clicking on a particular ticket will open the query view where admin can see all the original question and answer.
-		6) Admin can download the file uploaded by the user at the time of query creation.
-		7) Admin will be able to reply to the query in a chat like beautiful interface.
-		8) Admin can reset password securely if he forgets it.
+Admin facing :
+	1) Admin must signup with first name as admin (all small characters).
+	2) All users having first name as admin will be the admin of this application.
+	3) After logging in, admin will be able to view all the tickets that has been created on the support system.
+	4) Admin can filter tickets based on which are open or closed. 
+	5) Clicking on a particular ticket will open the query view where admin can see all the original question and answer.
+	6) Admin can download the file uploaded by the user at the time of query creation.
+	7) Admin will be able to reply to the query in a chat like beautiful interface.
+	8) Admin can reset password securely if he forgets it.
 ```
 
 
@@ -129,22 +129,22 @@ Getting started
 Prerequisites
 
 ```
-	1) Mongodb
-	2) Node js version 6 and above
-	3) Nginx
-	4) Git
+1) Mongodb
+2) Node js version 6 and above
+3) Nginx
+4) Git
 ```
 
 Installing and pulling files
 
 ```
-	1) Create new directory by : mkdir dirname
-	2) cd into that folder
-	3) Add git origin by : git remote add origin https://github.com/codemachin/TotalSolutions.git
-	4) Initialise git to that directory : git init
-	5) Pull files: git pull origin master  
-	6) Run : npm install, to install all dependencies
-	7) Run : node app.js, to start the server
+1) Create new directory by : mkdir dirname
+2) cd into that folder
+3) Add git origin by : git remote add origin https://github.com/codemachin/TotalSolutions.git
+4) Initialise git to that directory : git init
+5) Pull files: git pull origin master  
+6) Run : npm install, to install all dependencies
+7) Run : node app.js, to start the server
 ```
 
 Nginx configuration for proxy pass to port 80
