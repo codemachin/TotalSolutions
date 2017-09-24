@@ -3,6 +3,7 @@
 myApp.config(['$routeProvider','$httpProvider', function($routeProvider,$httpProvider){
     $httpProvider.interceptors.push('authInterceptor');
     // for pre-processing the http requests with authInterceptor
+
     $routeProvider
         .when('/',{
         	templateUrl		: 'views/login-view.html',
@@ -53,8 +54,7 @@ myApp.config(['$routeProvider','$httpProvider', function($routeProvider,$httpPro
 
         .otherwise(
             {
-                //redirectTo:'/'
-                template   : '<h1 style="color:#004D40;margin:10%">404 page not found</h1>'
+                templateUrl:'404.html'
             }
         );
 

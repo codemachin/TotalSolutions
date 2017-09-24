@@ -48,6 +48,8 @@ any kind of platform to get support queries from their users and resolve them.
 	6) Security
 		~ Secured with JWT.
 		~ Default JWT expiry time is set to 30 minutes.
+	7) Single page application
+	8) Purely stateless
 
 ## Extra features
 

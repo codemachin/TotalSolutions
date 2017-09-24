@@ -10,7 +10,7 @@ myApp.controller('homeController',['$window','$http','$routeParams','supportServ
       this.profile = JSON.parse(supportService.url_base64_decode(encodedProfile));
        
     }else{
-      alert("no token found. please login")
+      alert("Oops you are not logged in. Please login to continue")
       window.location='#/'
     }// gets details from the jwt token an decodes it to get profile information
 
