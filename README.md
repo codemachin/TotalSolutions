@@ -76,18 +76,18 @@ Environment : Windows and Linux
 Setting Prerequisites
 
 ```
-	1) Start mongodb by running mongod
-	2) Check node is above version 6.0. Check by typing node -v in terminal
+1) Start mongodb by running mongod
+2) Check node is above version 6.0. Check by typing node -v in terminal
 ```
 
 Setting up the local server
 
 ```
-	1) Unzip the file
-	2) Open terminal and change its location the where you unzipped the file
-	3) Run command npm install
-	4) After all dependencies are installed. Run command : node app.js, in your terminal
-	5) let the server start
+1) Unzip the file
+2) Open terminal and change its location the where you unzipped the file
+3) Run command npm install
+4) After all dependencies are installed. Run command : node app.js, in your terminal
+5) let the server start
 ```
 
 Getting started
