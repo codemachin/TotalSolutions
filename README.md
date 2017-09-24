@@ -12,7 +12,7 @@ Robust MEAN Ticket based support system
 
 ## Assumption
 ```
-	All users having first name as '**admin**' will be the admin of this application.
+	All users having first name as ' **admin** ' will be the admin of this application.
 ```
 
 ## Project Description
