@@ -28,6 +28,7 @@ any kind of platform to get support queries from their users and resolve them.
 
 	1) Login(encrypted)
 	2) Signup(encrypted)
+	3) Facebook and google login and signup using passport js.
 	3) Ticket Raising panel - User facing 
 		~ A View to create a ticket.
 		~ File upload upto 20 MB.
@@ -58,10 +59,10 @@ any kind of platform to get support queries from their users and resolve them.
 
 ## Extra features
 
-	1) File Upload functionality.
+	1) File Upload functionality using ng-file-upload (frontend) and multer (backend)
 	2) File Download functionality.
-	3) Google signup and google login.
-	4) Facebook signup and facebook login.
+	3) Google signup and google login using passport js.
+	4) Facebook signup and facebook login using passport js.
 	5) Added angular-trix editor for better text formatting.
 	6) Secure password reset feature with token expiry functionality.	
 
