@@ -11,9 +11,9 @@ Robust MEAN Ticket based support system
 [54.209.102.122](http://54.209.102.122/ "Ticket based support app")
 
 ## Assumption
-```
-	All users having first name as ' **admin** ' will be the admin of this application.
-```
+
+All users having first name as '**admin**' will be the admin of this application.
+
 
 ## Project Description
 ```
