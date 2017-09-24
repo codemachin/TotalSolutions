@@ -13,12 +13,13 @@ Robust MEAN Ticket based support system
 ## Assumption
 
 All users having first name as '**admin**' will be the admin of this application.
+Treated the Admin as a user of the system. Did not create special backend for admin.
 
 
 ## Project Description
 ```
 Support is an essential feature for any platform, and dedicated support is best approach in case you are 
-really concerned about the user experience of your platform.   The Aim of the project is to create an 
+really concerned about the user experience of your platform. The Aim of the project is to create an 
 online ticket based support system, just like the one present on edwisor.com which should be usable by 
 any kind of platform to get support queries from their users and resolve them.
 ```
@@ -50,6 +51,9 @@ any kind of platform to get support queries from their users and resolve them.
 		~ Default JWT expiry time is set to 30 minutes.
 	7) Single page application.
 	8) Pure stateless REST apis.
+	9) In this system there can be multiple admins
+	10) If user replies all the admins of the system will get notification.
+	11) if Admin replies then the user will recieve a message.
 
 ## Extra features
 
