@@ -31,6 +31,7 @@ any kind of platform to get support queries from their users and resolve them.
 	3) Ticket Raising panel - User facing 
 		~ A View to create a ticket.
 		~ File upload upto 20 MB.
+		~ Query text formatting using Angular-trix
 		~ A View to view all queries raised by the person. This view contains necessary shortcuts like open and close query with sort and filter functionality.
 		~ A view to show the details of a particular query.
 		~ This view contains file download feature and one can download the files attached by the user.
