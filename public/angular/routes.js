@@ -54,7 +54,7 @@ myApp.config(['$routeProvider','$httpProvider', function($routeProvider,$httpPro
 
         .otherwise(
             {
-                templateUrl:'404.html'
+                templateUrl:'views/404.html'
             }
         );
 

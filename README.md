@@ -115,7 +115,7 @@ User facing :
 	3) User can filter tickets based on which are open or closed.
 	4) While creating a ticket an user can upload any file upto 20 MB that best describes his query. 
 	5) Clicking on a particular ticket will open the query view where user can see all the original question and answer.
-	6) Users can download his uploaded file at the time of query creation.
+	6) Users can download the file uploaded by him, at the time of query creation.
 	7) User will be able to reply to messages and send message himself in a chat like beautiful interface.
 	8) User can reset password securely if he forgets it.
 
@@ -125,7 +125,7 @@ Admin facing :
 	3) After logging in, admin will be able to view all the tickets that has been created on the support system.
 	4) Admin can filter tickets based on which are open or closed. 
 	5) Clicking on a particular ticket will open the query view where admin can see all the original question and answer.
-	6) Admin can download the file uploaded by the user at the time of query creation.
+	6) Admin can download the file uploaded by him, at the time of query creation.
 	7) Admin will be able to reply to the query in a chat like beautiful interface.
 	8) Admin can reset password securely if he forgets it.
 ```

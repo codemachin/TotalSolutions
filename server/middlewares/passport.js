@@ -27,7 +27,10 @@ exports.passportMiddleware = function(passport,app) {
     // setting up client id and client secret
 
     passport.use(new Strategy({
-        
+        /*clientID: '466781710345000',
+        clientSecret: 'be05f400aa68396530acd6abee8bbd37',
+        callbackURL: 'http://totalsolutions.ga/login/facebook/return',*/
+        /////////////////////////////////////// down - localhost ////////////////////////////////////////
         clientID: '359580641139615',
         clientSecret: '42bb227a973945d92e5ea283acdf3bab',
         callbackURL: 'http://localhost:3000/login/facebook/return',
