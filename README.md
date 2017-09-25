@@ -12,8 +12,9 @@ Robust MEAN Ticket based support system
 
 ## Assumption
 
-All users having first name as '**admin**' will be the admin of this application.
-Treated the Admin as a user of the system. Did not create special backend for admin.
+* Please signup with firstName as '**admin**' to be the admin of this system.
+* All users having first name as '**admin**' will be the admin of this application.
+* Treated the Admin as a user of the system. Did not create special backend for admin.
 
 
 ## Project Description
